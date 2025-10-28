@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #cbeaff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* Container yang menampilkan area permainan (viewport kamera) */
+.game-container {
+  width: 90vw;
+  max-width: 800px;
+  height: 50vh;
+  overflow: hidden;
+  border: 3px solid #333;
+  border-radius: 10px;
+  background: linear-gradient(#8fd3ff, #e0f7ff);
+  position: relative;
+}
+
+/* Area permainan yang luas */
+.game-area {
+  position: relative;
+  width: 3000px; /* 👈 lebih luas ke kanan */
+  height: 100%;
+  transition: transform 0.1s linear;
+}
+
+.ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: #4a3d2d;
+}
+
+.player, .enemy, .finis, .enemydua,.enemytiga{
+  position: absolute;
+  bottom: 60px;
+}
+
+.player img, .enemy img, .finis img, .enemydua img, .enemytiga img{
+  width: 60px;
+  height: 60px;
+}
+
+/* Posisi awal */
+.player { left: 50px; }
+.enemy { left: 600px; }
+.enemydua { left: 300px; }
+.enemytiga { left: 900px; }
+.finis { left: 1200px; } 
+/* 👈 finis jauh di kanan */
+
+.message {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  background: rgba(0,0,0,0.75);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  display: none;
+}
+
+/* Tombol kontrol */
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 25px;
+}
+
+.controls button {
+  background: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  font-size: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: 0.2s;
+}
+
+.controls button:active {
+  transform: scale(0.9);
+  background: #005dd1;
+}
